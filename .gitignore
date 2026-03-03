@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Playwright test artifacts
+.playwright/
+playwright-report/
+playwright-report-*/
+test-results/
+*.trace
+*.zip
+
+# VSCode settings
+.vscode/
