@@ -17,5 +17,3 @@ test-results/
 *.trace
 *.zip
 
-# VSCode settings
-.vscode/
