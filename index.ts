@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 import { Temporal } from "@js-temporal/polyfill";
+import { AttendanceLogResponseItem } from "./lib/attendanceLogs/types/AttendanceLogResponseItem";
 
 process.loadEnvFile();
 
@@ -21,6 +22,17 @@ console.log("Scraping with Playwright...");
   await page.fill("[name='password']", process.env.APP_PASSWORD || "");
 
   await page.click("[name='login']");
+
+  const attendanceLogResponse = await page.waitForResponse(
+    (response) =>
+      response.url().includes("/eco-webapp-api/attendance-logs") &&
+      response.request().method() === "GET",
+  );
+
+  const attendanceLogs: AttendanceLogResponseItem[] =
+    await attendanceLogResponse.json();
+
+  await page.pause();
 
   // do a page click by getByRole('button', { name: 'Clock Out' })
   await page.getByRole("button", { name: "Clock Out" }).click();
