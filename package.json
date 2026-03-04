@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^25.3.3",
     "prettier": "3.8.1",
     "tsx": "^4.21.0"
   },
   "dependencies": {
+    "@js-temporal/polyfill": "^0.5.1",
     "playwright": "^1.58.2"
   }
 }

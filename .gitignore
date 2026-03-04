@@ -17,3 +17,10 @@ test-results/
 *.trace
 *.zip
 
+.env*
+
+# Screenshots folder: ignore all except .gitkeep
+screenshots/*
+!screenshots/.gitkeep
+
+
